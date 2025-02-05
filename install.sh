@@ -8,14 +8,14 @@ sudo add-apt-repository ppa:agornostal/ulauncher -y
 sudo apt update -y
 sudo apt install nodejs xdg-utils wget xz-utils python3 unzip vlc libgtk-4-dev libadwaita-1-dev git ca-certificates curl golang npm tmux rofi git zsh ripgrep pavucontrol xclip jq tldr shutter python3-pip curl llvm lld llvm-dev clang libclang-dev libglib2.0-dev libgtk-4-dev gnome-tweak-tool flameshot libadwaita-1-dev git xclip flatpak gnome-software-plugin-flatpak obs-studio mpv  fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find tldr ulauncher build-essential pkg-config autoconf bison clang rustc  libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common -y 
   
-git clone https://github.com/shonen787/congenial-waffle
+
 cd ~
 
 echo "############## INSTALL ZSH ###################"
 hash -r
 sudo chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-exit
+
 
 
 ################### INSTALL RUST ###################
