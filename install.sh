@@ -6,7 +6,7 @@ gsettings set org.gnome.desktop.session idle-delay 0
 sudo add-apt-repository universe -y
 sudo add-apt-repository ppa:agornostal/ulauncher -y 
 sudo apt update -y
-sudo apt install nodejs unzip vlc libgtk-4-dev libadwaita-1-dev git ca-certificates curl golang npm tmux rofi git zsh ripgrep pavucontrol xclip jq tldr shutter python3-pip curl llvm lld llvm-dev clang libclang-dev libglib2.0-dev libgtk-4-dev gnome-tweak-tool flameshot libadwaita-1-dev git xclip flatpak gnome-software-plugin-flatpak obs-studio mpv  fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find tldr ulauncher build-essential pkg-config autoconf bison clang rustc  libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common -y 
+sudo apt install nodejs xdg-utils wget xz-utils python3 unzip vlc libgtk-4-dev libadwaita-1-dev git ca-certificates curl golang npm tmux rofi git zsh ripgrep pavucontrol xclip jq tldr shutter python3-pip curl llvm lld llvm-dev clang libclang-dev libglib2.0-dev libgtk-4-dev gnome-tweak-tool flameshot libadwaita-1-dev git xclip flatpak gnome-software-plugin-flatpak obs-studio mpv  fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find tldr ulauncher build-essential pkg-config autoconf bison clang rustc  libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common -y 
   
 git clone https://github.com/shonen787/congenial-waffle
 cd ~
@@ -174,7 +174,7 @@ curl -fsSL https://deno.land/install.sh | sh
 curl -fsSL https://bun.sh/install | bash
 
 
-
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
 
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDjjv1gg+99B8cM9MVCVOLibDh7heUqS//d2iQk+TJYQme4MqDwavxuGT1/qGnDjJpjRuzv9BVk+EMzoNvTKi3IOncGisOn+aAIA0cuqqXQK0nmc8YoSBIDvkDnd0TxHlDUq64DDf4jSPtyS3XCoXZ3wXxYdswb2XlSNyoSXaLLotQrVRuM7itMNUdOCPH051np2sndfYo06ko89ddWRLMtWIOvfDkf3U94kwvZgA/TlY9FgAng95AYFhxfpMyDUm5ky/aNYbeSjiDp/+M0ENftpHgX/HQqGcOU2UqAW2DB61+gmIJFgXPmnYPegIkTZHfdoQUrn1YtKZMtb5WOKVxjrTw8QpZMOe1zsGOmtpFWP+r3l34yA28Ie5dEZftXm/Y9P03/l8qvuQ1XzYKw0fAoJ3liiT07wUVJtzSr5qITJlMS3OKa6DeR17oB/ikWLCn6CQzDsAegKyIx5GzJMVLR6fZu7AXZi1v51YcjYL25pniGYsGdfQgFePgHmRcKxdM= shonen@DESKTOP-B55933L" >> $HOME/.ssh/id_rsa.pub
 
@@ -297,11 +297,6 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'sh -c -- "flameshot gui"'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Control>Print'
 
-# Start a new alacritty window (rather than just switch to the already open one)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'alacritty'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'alacritty'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Shift><Alt>2'
-
 # Start a new Chrome window (rather than just switch to the already open one)
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name 'new chrome'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command 'google-chrome'
@@ -334,6 +329,8 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 	sudo apt install gh -y
 
 curl -fsSL https://ollama.com/install.sh | sh
+
+
 
 ###################################### INSTALL CONFIGS ######################################
 
@@ -386,3 +383,7 @@ alias gcad='git commit -a --amend'
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
 EOF
+
+
+
+wget https://installers.privateinternetaccess.com/download/pia-linux-3.6.1-08339.run
