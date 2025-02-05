@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd -
+cd ~
 
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 gsettings set org.gnome.desktop.session idle-delay 0
@@ -40,7 +40,7 @@ cd /tmp
 wget https://zoom.us/client/latest/zoom_amd64.deb
 sudo apt install -y ./zoom_amd64.deb
 rm zoom_amd64.deb
-cd -
+cd ~
 
 ################### Steam ###################
 # Play games from https://store.steampowered.com/
@@ -48,7 +48,7 @@ cd /tmp
 wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb
 sudo apt install -y ./steam.deb
 rm steam.deb
-cd -
+cd ~
 
 ################### Spotify ###################
 # Stream music using https://spotify.com
@@ -64,7 +64,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install -y ./google-chrome-stable_current_amd64.deb
 rm google-chrome-stable_current_amd64.deb
 xdg-settings set default-web-browser google-chrome.desktop
-cd -
+cd ~
 
 ################### LocalSend ###################
 cd /tmp
@@ -72,7 +72,7 @@ LOCALSEND_VERSION=$(curl -s "https://api.github.com/repos/localsend/localsend/re
 wget -O localsend.deb "https://github.com/localsend/localsend/releases/latest/download/LocalSend-${LOCALSEND_VERSION}-linux-x86-64.deb"
 sudo apt install -y ./localsend.deb
 rm localsend.deb
-cd -
+cd ~
 
 ################### Signal ###################
 wget -qO- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor >signal-desktop-keyring.gpg
@@ -89,7 +89,7 @@ wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >pac
 sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
 echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list >/dev/null
 rm -f packages.microsoft.gpg
-cd -
+cd ~
 
 sudo apt update -y
 sudo apt install -y code
@@ -111,7 +111,7 @@ cp iaFonts/iA-Fonts-master/iA\ Writer\ Mono/Static/iAWriterMonoS-*.ttf ~/.local/
 rm -rf iafonts.zip iaFonts
 
 fc-cache
-cd -
+cd ~
 
 
 
