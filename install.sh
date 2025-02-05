@@ -198,6 +198,16 @@ gnome-extensions disable ubuntu-appindicators@ubuntu.com
 gnome-extensions disable ubuntu-dock@ubuntu.com
 gnome-extensions disable ding@rastersoft.com
 
+# Install new extensions
+$HOME/.local/bin/gext install tactile@lundal.io
+$HOME/.local/bin/gext install just-perfection-desktop@just-perfection
+$HOME/.local/bin/gext install blur-my-shell@aunetx
+$HOME/.local/bin/gext install space-bar@luchrioh
+$HOME/.local/bin/gext install undecorate@sun.wxg@gmail.com
+$HOME/.local/bin/gext install tophat@fflewddur.github.io
+$HOME/.local/bin/gext install AlphabeticalAppGrid@stuarthayhurst
+
+
 
 # Configure Tactile
 gsettings set org.gnome.shell.extensions.tactile col-0 1
@@ -361,7 +371,10 @@ StartupNotify=true
 EOF
 
 cat <<EOF >>~/.zshrc
+
+
 export PATH=/home/shonen/.local/zig-linux-x86_64-0.13.0/:\$PATH
+export PATH=/home/shonen/.local/bin/:\$PATH
 # File system
 alias ls='eza -lh --group-directories-first --icons=auto'
 alias lsa='ls -a'
@@ -369,7 +382,6 @@ alias lt='eza --tree --level=2 --long --icons --git'
 alias lta='lt -a'
 alias ff="fzf --preview 'batcat --style=numbers --color=always {}'"
 alias fd='fdfind'
-alias cd='z'
 # Directories
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -378,6 +390,7 @@ alias ....='cd ../../..'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
+
 
 # Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
