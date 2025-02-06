@@ -31,10 +31,7 @@ sudo snap install zig --classic --beta
 
 ################### Ghostty ###################
 
-git clone https://github.com/ghostty-org/ghostty
-cd ghostty
-zig build -p $HOME/.local/ -Doptimize=ReleaseFast
-
+sudo snap install ghostty --classic
 
 ################### Zoom ###################
 # Make video calls using https://zoom.us/
@@ -365,6 +362,9 @@ MimeType=text/html;text/xml;application/xhtml_xml;
 StartupNotify=true
 EOF
 
+
+
+
 cat <<EOF >>~/.zshrc
 
 
@@ -397,7 +397,13 @@ mkdir -p ~/.config/ghostty/
 cat <<EOF >>~/.config/ghostty/config
 font-family = CaskaydiaMono Nerd Font
 font-size = 20
-
+theme = Chalk
+adjust-cell-height = 15%
+mouse-hide-while-typing = true
+macos-titlebar-style=transparent
+background = 1C2021
+copy-on-select = clipboard
+#cursor-style = block
 
 
 EOF
