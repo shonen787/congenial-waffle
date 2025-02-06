@@ -6,8 +6,7 @@ gsettings set org.gnome.desktop.session idle-delay 0
 sudo add-apt-repository universe -y
 sudo add-apt-repository ppa:agornostal/ulauncher -y 
 sudo apt update -y
-sudo apt install nodejs xdg-utils wget xz-utils python3 unzip vlc libgtk-4-dev libadwaita-1-dev git ca-certificates curl golang npm tmux rofi git zsh ripgrep pavucontrol xclip jq tldr shutter python3-pip curl llvm lld llvm-dev clang libclang-dev libglib2.0-dev libgtk-4-dev gnome-tweak-tool flameshot libadwaita-1-dev git xclip flatpak gnome-software-plugin-flatpak obs-studio mpv  fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find tldr ulauncher build-essential pkg-config autoconf bison clang rustc  libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common -y 
-  
+sudo apt install  cmake nodejs xdg-utils wget xz-utils python3 unzip vlc libgtk-4-dev libadwaita-1-dev git ca-certificates curl golang npm tmux rofi git zsh ripgrep pavucontrol xclip jq tldr shutter python3-pip curl llvm lld llvm-dev clang libclang-dev libglib2.0-dev libgtk-4-dev gnome-tweak-tool flameshot libadwaita-1-dev git xclip flatpak gnome-software-plugin-flatpak obs-studio mpv  fzf ripgrep bat eza zoxide plocate btop apache2-utils fd-find tldr ulauncher build-essential pkg-config autoconf bison clang rustc  libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common clang-19 lldb-19 lld-19 clangd-19 libclang-cpp19-dev libclang-19-dev liblld-19 liblld-19-dev libllvm19 -y
 
 cd ~
 
@@ -28,17 +27,13 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo flatpak install flathub md.obsidian.Obsidian -y
 
 ################### INSTALL ZIG ###################
-
-wget https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -O /tmp/zig.tar.xz
-mkdir $HOME/.local
-tar -xvf /tmp/zig.tar.xz -C $HOME/.local
-export PATH="$HOME/.local/zig-linux-x86_64-0.13.0:$PATH"
+sudo snap install zig --classic --beta
 
 ################### Ghostty ###################
 
 git clone https://github.com/ghostty-org/ghostty
 cd ghostty
-zig build -p $HOME/.local -Doptimize=ReleaseFast
+zig build -p $HOME/.local/ -Doptimize=ReleaseFast
 
 
 ################### Zoom ###################
@@ -373,7 +368,7 @@ EOF
 cat <<EOF >>~/.zshrc
 
 
-export PATH=/home/shonen/.local/zig-linux-x86_64-0.13.0/:\$PATH
+export PATH=/home/shonen/.local/:\$PATH
 export PATH=/home/shonen/.local/bin/:\$PATH
 # File system
 alias ls='eza -lh --group-directories-first --icons=auto'
@@ -397,6 +392,15 @@ compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
 alias decompress="tar -xzf"
 EOF
 
+mkdir -p ~/.config/ghostty/
+
+cat <<EOF >>~/.config/ghostty/config
+font-family = CaskaydiaMono Nerd Font
+font-size = 20
+
+
+
+EOF
 
 
 wget https://installers.privateinternetaccess.com/download/pia-linux-3.6.1-08339.run
