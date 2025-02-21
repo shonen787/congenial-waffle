@@ -363,6 +363,8 @@ StartupNotify=true
 EOF
 
 
+## Install pyenv
+curl -fsSL https://pyenv.run | bash
 
 
 cat <<EOF >>~/.zshrc
@@ -385,6 +387,11 @@ alias ....='cd ../../..'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
 
 
 # Compression
