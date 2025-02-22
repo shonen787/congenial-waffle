@@ -20,7 +20,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ################### INSTALL RUST ###################
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 git config --global user.email "shonen787@gmail.com"
-git config --global user.name "shonen"
+git config --global user.name "shonen787"
 
 ################### FlatPak Installation ###################
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
